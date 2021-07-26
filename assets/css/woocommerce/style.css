@@ -298,6 +298,15 @@ p#calc_shipping_state_field span {
 }
 
 /* Checkout Page */
+/* Coupon Form */
+.woocommerce form.checkout_coupon {
+    display: block!important;
+    border: 0px;
+    padding: 0px;
+}
+.woocommerce form.checkout_coupon input#coupon_code {
+    padding: 5px;
+}
 /* Billing Info Form */
 .woocommerce-checkout .woocommerce-billing-fields p#billing_first_name_field, 
 .woocommerce-checkout .woocommerce-billing-fields p#billing_last_name_field

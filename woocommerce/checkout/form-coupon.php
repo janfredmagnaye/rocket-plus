@@ -24,14 +24,16 @@ if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 ?>
 <form class="checkout_coupon woocommerce-form-coupon" method="post">
 	<div class="row">
-		<div class="col-md-9 col-xs-12">
-			<p class="coupon-code-input">
+		<div class="col-md-6 col-xs-12">
+			<h3>Coupon Code</h3>
+			<p>
+			<span class="coupon-code-input">
 				<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
-			</p>
-		</div>
-		<div class="col-md-3 col-xs-12">
-			<p class="coupon-code-submit">
-				<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply', 'woocommerce' ); ?></button>
+				</span>	
+			
+			<span class="coupon-code-submit">
+				<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply', 'woocommerce' ); ?></button>				
+			</span>
 			</p>
 		</div>
 	</div>

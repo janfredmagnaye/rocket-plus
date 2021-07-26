@@ -58,3 +58,12 @@
         height: 400px;
     }
 }
+@media screen and (max-width: 320px){
+    .woocommerce form.checkout_coupon input#coupon_code,
+    .woocommerce form.checkout_coupon .coupon-code-submit button.button {
+        display: block;
+        width: 100%;
+        margin: 5px 0px;
+    }
+}
+
