@@ -31,6 +31,12 @@
     /* Cart Header Visiblity */
     --cart-header: none;
 }
+.woocommerce-info {
+    border-top-color:var(--primary-color);
+}
+.woocommerce-info::before {
+    color: var(--primary-color);
+}
 ul.product_list_widget {
     list-style: none;
     padding-left: 0px;
