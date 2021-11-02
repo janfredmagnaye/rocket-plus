@@ -335,7 +335,11 @@
 						</tr>
 						<tr>
 							<td>QR Shortcode: </td>
-							<td><input type="checkbox" name="qr-shortcode-module" value="true" <?php if(get_option('qr-shortcode-module') == "true") echo "checked"; ?> /> <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a> </td>
+							<td><input type="checkbox" name="qr-shortcode-module" value="true" <?php if(get_option('qr-shortcode-module') == "true") echo "checked"; ?> /></td>
+						</tr>
+						<tr>
+							<td>Classic Editor: </td>
+							<td><input type="checkbox" name="classic-editor-module" value="true" <?php if(get_option('classic-editor-module') == "true") echo "checked"; ?> /></td>
 						</tr>
 					</table>
 				</div>
@@ -518,6 +522,7 @@
 		register_setting( 'option-group', 'post-placeholder' );
 
 		register_setting( 'option-group', 'qr-shortcode-module' );
+		register_setting( 'option-group', 'classic-editor-module' );
 
 		if(is_woocommerce_activated()){
 			rocket_woocommerce();

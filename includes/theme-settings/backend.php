@@ -70,4 +70,9 @@ add_action('after_setup_theme', 'rocket_after_setup');
 // Add Filters on Backend
 // Enable Shortcodes on Widgets
 add_filter( 'widget_text', 'do_shortcode' );
-add_filter('use_block_editor_for_post','__return_false');
+
+function classicEditorMode(){
+    if(get_option('classic-editor-module') == "true"){
+        add_filter('use_block_editor_for_post','__return_false');
+    }
+}
