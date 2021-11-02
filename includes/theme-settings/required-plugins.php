@@ -51,8 +51,15 @@ function requiredPlugins() {
             'force_deactivation' => false
         ),
         array(
-            'name'      => 'Classic Editor', //repo name
-            'slug'      => 'classic-editor', //url
+            'name'      => 'WP Activity Log', //repo name
+            'slug'      => 'wp-security-audit-log', //url
+            'required'  => true,
+            'force_activation' => true,
+            'force_deactivation' => true
+        ),
+        array(
+            'name'      => 'Broken Link Checker', //repo name
+            'slug'      => 'broken-link-checker', //url
             'required'  => true,
             'force_activation' => true,
             'force_deactivation' => true
