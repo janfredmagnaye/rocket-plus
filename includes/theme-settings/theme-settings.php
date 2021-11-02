@@ -259,14 +259,14 @@
 				<div id="4" class="tabcontent">
 					<h3> Page Settings</h3>
 					<table class="rckt-table">
-						<tr>
+						<!-- <tr>
 							<td class="w-25">Header Template</td>
-							<td class="w-25"><input type="radio" name="header-template" value="left"<?= ((get_option('header-template') === 'left') ? "checked='checked'" : '') ?>>Default</td>
-							<td class="w-25"><input type="radio" name="header-template" value="center"<?= ((get_option('header-template') === 'center') ? "checked='checked'" : '') ?>>Center Logo</td>
-							<td class="w-25"><input type="radio" name="header-template" value="right"<?= ((get_option('header-template') === 'right') ? "checked='checked'" : '') ?>>Right Logo</td>
-						</tr>
+							<td class="w-25"><input type="radio" name="header-template" value="left"< ?= ((get_option('header-template') === 'left') ? "checked='checked'" : '') ?>>Default</td>
+							<td class="w-25"><input type="radio" name="header-template" value="center"< ?= ((get_option('header-template') === 'center') ? "checked='checked'" : '') ?>>Center Logo</td>
+							<td class="w-25"><input type="radio" name="header-template" value="right"< ?= ((get_option('header-template') === 'right') ? "checked='checked'" : '') ?>>Right Logo</td>
+						</tr> -->
 						<tr>
-							<td class="w-25">Footer Template</td>
+							<td class="w-25">Copyright Footer Template</td>
 							<td class="w-25"><input type="radio" name="footer-template" value="columns"<?= ((get_option('footer-template') === 'columns') ? "checked='checked'" : '') ?>>Default ( 2 columns )</td>
 							<td class="w-25"><input type="radio" name="footer-template" value="center"<?= ((get_option('footer-template') === 'center') ? "checked='checked'" : '') ?>>Center Contents</td>
 						</tr>
@@ -465,7 +465,7 @@
 		add_option( 'header-bgcolor', '#1e73be' );
 		add_option( 'page-bgcolor', '#FFFFFF' );
 		add_option( 'footer-bgcolor', '#8E8A89' );
-		add_option( 'header-template', 'left' );
+		// add_option( 'header-template', 'left' );
 		add_option( 'footer-template', 'columns' );
 		add_option( 'mobile-breakpoint', '800' );
 		add_option('copyright', $copyright);

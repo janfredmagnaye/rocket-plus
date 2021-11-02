@@ -1,5 +1,14 @@
 <?php
 	/* Sidebar */
+	function rocketTopHeader() {
+		register_sidebar( array(
+			'name' => __( 'Top Header', 'rocket' ),
+			'id' => 'top-header-widget',
+			'description' => __( 'Displays the Top-most header information', 'rocket' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+		) );
+	}
 	function rocketHeader() {
 		register_sidebar( array(
 		   'name' => __( 'Header', 'rocket' ),
@@ -48,6 +57,7 @@
 
 	/* Register Sidebars */
 	function rocketSidebarRegister(){
+		add_action( 'widgets_init', 'rocketTopHeader' );
 		add_action( 'widgets_init', 'rocketHeader' );	 	
 		add_action( 'widgets_init', 'rocketFooter' );	 	
 		add_action( 'widgets_init', 'ctaBeforeFooter' );	 
