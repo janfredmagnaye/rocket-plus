@@ -18,8 +18,7 @@ class bs4_column_widget extends WP_Widget {
         );
         // Setup default values
         $this->defaults = array(
-            'title'  => 'Column title',
-            'title_tag' => 'h3',
+            'name'  => 'Name',
             'class'  => 'col',
             'content'  => 'Column Content',
         );
@@ -30,15 +29,13 @@ class bs4_column_widget extends WP_Widget {
         // Call for Defaults
         $instance = wp_parse_args( (array) $instance, $this->defaults );
         // Apply Defaults to variables
-        $title     =  apply_filters( 'widget_title', $instance['title'] );
-        $title_tag =  $instance['title_tag'];
+        $Name     =  apply_filters( 'widget_title', $instance['name'] );
         $class     =  $instance['class'];
         $content   =  apply_filters('the_content', $instance['content']);
   
         // Front-end rendering
         echo '<div class="'.$class.'">';
             echo '<div class="column-content">';  
-            echo '<'.$title_tag.'>'.$title.'</'.$title_tag.'>';
             echo $content; 
             echo '</div>';            
         echo '</div>';
@@ -48,11 +45,8 @@ class bs4_column_widget extends WP_Widget {
     // Creating widget Backend 
     public function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, $this->defaults );
-        if ( !empty( $instance[ 'title' ] ) ) {
-            $title = $instance[ 'title' ];
-        }
-        if ( !empty( $instance[ 'title_tag' ] ) ) {
-            $title_tag = $instance[ 'title_tag' ];
+        if ( !empty( $instance[ 'name' ] ) ) {
+            $title = $instance[ 'name' ];
         }
         if ( !empty( $instance[ 'class' ] ) ) {
             $class = $instance[ 'class' ];
@@ -63,18 +57,8 @@ class bs4_column_widget extends WP_Widget {
         // Widget admin form
         ?>
             <p>
-                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'title_tag' ); ?>"><?php _e( 'Title HTML Tag:' ); ?></label> 
-                <input 
-                class="widefat" 
-                id="<?php echo $this->get_field_id( 'title_tag' ); ?>" 
-                name="<?php echo $this->get_field_name( 'title_tag' ); ?>" 
-                type="text" 
-                value="<?php echo esc_attr( $title_tag ); ?>" 
-                />
+                <label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php _e( 'Name:' ); ?></label> 
+                <input class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" type="text" value="<?php echo esc_attr( $name ); ?>" />
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id( 'class' ); ?>"><?php _e( 'Column class:' ); ?></label> 
@@ -92,8 +76,7 @@ class bs4_column_widget extends WP_Widget {
     // Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
-        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-        $instance['title_tag'] = ( ! empty( $new_instance['title_tag'] ) ) ? strip_tags( $new_instance['title_tag'] ) : '';
+        $instance['name'] = ( ! empty( $new_instance['name'] ) ) ? strip_tags( $new_instance['name'] ) : '';
         $instance['class'] = ( ! empty( $new_instance['class'] ) ) ? strip_tags( $new_instance['class'] ) : '';
         $instance['content'] = $new_instance['content'];
         return $instance;
