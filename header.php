@@ -9,6 +9,9 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+<!-- After Opening Head Scripts -->	
+<?php echo get_option('after_opening_head_scripts');?>
+<!-- After Opening Head Scripts End -->
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title><?php wp_title('|','true','right'); ?></title>

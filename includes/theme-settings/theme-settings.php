@@ -348,6 +348,10 @@
 					<h3> Third Party Scripts</h3>
 					<table class="rckt-table">
 						<tr>
+							<td>After Opening <code>&lt;/head&gt;</code> : </td>
+							<td><textarea rows="10" type="text" name="after_opening_head_scripts" value="<?= esc_attr( get_option('after_opening_head_scripts') )?>" ><?= esc_attr( get_option('after_opening_head_scripts') )?></textarea></td>
+						</tr>		
+						<tr>
 							<td>Before Closing <code>&lt;/head&gt;</code> : </td>
 							<td><textarea rows="10" type="text" name="before_closing_head_scripts" value="<?= esc_attr( get_option('before_closing_head_scripts') )?>" ><?= esc_attr( get_option('before_closing_head_scripts') )?></textarea></td>
 						</tr>
@@ -494,6 +498,7 @@
 		register_setting( 'option-group', 'copyright' );
 		register_setting( 'option-group', 'developer' );
 
+		register_setting( 'option-group', 'after_opening_head_scripts' );
 		register_setting( 'option-group', 'before_closing_head_scripts' );
 		register_setting( 'option-group', 'before_closing_body_scripts' );
 		register_setting( 'option-group', 'after_opening_body_scripts' );
