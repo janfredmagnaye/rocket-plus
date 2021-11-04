@@ -19,7 +19,9 @@ window.addEventListener("load", function(){
     // Add height and width to images on load
     var images = document.getElementsByTagName('img');
     for(i = 0; i < images.length; i++) {
-        images[i].setAttribute('height', images[i].clientHeight);
-        images[i].setAttribute('width', images[i].clientWidth);
+        if(!images[i].classList.contains('rio-except')){
+            images[i].setAttribute('height', images[i].clientHeight);
+            images[i].setAttribute('width', images[i].clientWidth);
+        }
     }
 });

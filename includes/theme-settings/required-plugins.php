@@ -37,10 +37,17 @@ function requiredPlugins() {
             'force_deactivation' => false
         ),
         array(
+            'name'      => 'Redirection for Contact Form 7', //repo name
+            'slug'      => 'wpcf7-redirect', //url
+            'required'  => true,
+            'force_activation' => false,
+            'force_deactivation' => false
+        ),
+        array(
             'name'      => 'Max Mega Menu', //repo name
             'slug'      => 'megamenu', //url
             'required'  => true,
-            'force_activation' => true,
+            'force_activation' => false,
             'force_deactivation' => false
         ),
         array(
