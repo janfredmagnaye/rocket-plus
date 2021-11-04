@@ -380,6 +380,10 @@
 							<td>Critical CSS : </td>
 							<td><textarea rows="10" type="text" name="rocket_critical_css" value="<?= esc_attr( get_option('rocket_critical_css') )?>" ><?= esc_attr( get_option('rocket_critical_css') )?></textarea></td>
 						</tr>
+						<tr>
+							<td>Enable Inline Height & Width to all images?</td>
+							<td><input type="checkbox" name="rocket_image_optimize" value="true" <?php if(get_option('rocket_image_optimize') == "true") echo "checked"; ?> /></td>
+						</tr>
 					</table>
 					<!-- <span>Enable Optimizations: </span>
 					<input type="checkbox" name="rocket_optimizations" value="true" < ?php if(get_option('rocket_optimizations') == "true") echo "checked"; ?> />
@@ -504,7 +508,7 @@
 		register_setting( 'option-group', 'after_opening_body_scripts' );
 
 		register_setting( 'option-group', 'google-font-import' );
-		register_setting( 'option-group', 'footer_jQuery' );
+		register_setting( 'option-group', 'rocket_image_optimize' );
 		// register_setting( 'option-group', 'rocket_optimizations' );
 		// register_setting( 'option-group', 'optimize_theme_scripts_styles' );
 		// register_setting( 'option-group', 'rocket_critical_css' );

@@ -97,7 +97,9 @@ function rocketScript(){
 	
 	//Rocket JS
 	// wp_enqueue_script( 'rocket-bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js', array('jquery'));	
-	wp_enqueue_script( 'rocket-optimizations-script', get_template_directory_uri()  . '/assets/js/optimizations.js',array('jquery'));
+	if(get_option('rocket_image_optimize') == "true"){
+		wp_enqueue_script( 'rocket-image-optimize', get_template_directory_uri()  . '/assets/js/image-optimize.js',array('jquery'));
+	}
 	wp_enqueue_script( 'rocket-script', get_stylesheet_directory_uri()  . '/assets/js/script.js',array('jquery'));
 	//Wordpress AJAX
 	wp_localize_script( 'wp_ajax', 'wp_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
