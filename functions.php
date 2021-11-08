@@ -16,6 +16,10 @@
 	// Modules
 	require_once('modules/custom-module.php');
 	require_once('modules/optimizations.php');
+	// Owl Carousel Module
+	if(get_option('owl')) { 
+		require_once('modules/owl-carousel.php');
+	}	
 	// QR Shortcode Module
 	if(get_option('qr-shortcode-module')){
 		require_once('modules/qr-shortcode-module.php');

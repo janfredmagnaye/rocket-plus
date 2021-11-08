@@ -134,6 +134,10 @@
 							<td>Current Year:</td>
 							<td><code>[year]</code></td>
 						</tr>
+						<tr>
+							<td>Add inline Owl Carousel Script:</td>
+							<td><code>[rocket-owl-carousel container={{Class name of carousel}} items={{Number of items}} margin=10 nav=true dots=true]</code></td>
+						</tr>
 					</table>
 				</div>
 			<form method="post" enctype="multipart/form-data" action="options.php">
