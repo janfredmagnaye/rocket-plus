@@ -231,6 +231,10 @@
 							<td><input type="text" name="header-bgcolor" class="color-field" value="<?= esc_attr( get_option('header-bgcolor') )?>" /></td>
 						</tr>
 						<tr>
+							<td>Fixed Header? </td>
+							<td class="w-25"><input type="checkbox" name="header-fixed" value="true" <?php if(get_option('header-fixed') == "true") echo "checked"; ?> /></td>							
+						</tr>
+						<tr>
 							<td>Page Background Color </td>
 							<td><input type="text" name="page-bgcolor" class="color-field" value="<?= esc_attr( get_option('page-bgcolor') )?>" /></td>
 						</tr>
@@ -521,6 +525,7 @@
 		// register_setting( 'option-group', 'disable_wc_blk_styles' );
  
 		register_setting( 'option-group', 'header-bgcolor' );
+		register_setting( 'option-group', 'header-fixed' );
 		register_setting( 'option-group', 'page-bgcolor' );
 		register_setting( 'option-group', 'footer-bgcolor' );
 		register_setting( 'option-group', 'rocket-mobile-menu' );
@@ -549,6 +554,16 @@
 		$mm_offset = get_option('mobile-top-offset');
 	?>
 		<style type="text/css">
+			.fixed-header .site-header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 998;
+			}
+			.fixed-header div#primary {
+				margin-top: calc( var(--top-header-height) + var(--main-header-height));
+			}
 			.site-header, nav.navbar {
 				background-color:<?php echo $header; ?>;
 			}

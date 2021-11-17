@@ -57,8 +57,8 @@
 		<!-- Rocket Mobile Menu End -->
 	<?php endif; ?>
 	
-	<div id="page" class="hfeed ">
-		<div class="site-header">
+	<div id="page" class="hfeed <?php if(get_option('header-fixed')) { echo 'fixed-header'; } ?>">
+		<div class="site-header ">
 			<div class="top-header">
 				<div class="container">
 					<div class="row align-items-center">
