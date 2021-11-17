@@ -353,6 +353,10 @@
 							<td>Classic Editor: </td>
 							<td><input type="checkbox" name="classic-editor-module" value="true" <?php if(get_option('classic-editor-module') == "true") echo "checked"; ?> /></td>
 						</tr>
+						<tr>
+							<td>Classic Widgets: </td>
+							<td><input type="checkbox" name="classic-widgets-module" value="true" <?php if(get_option('classic-widgets-module') == "true") echo "checked"; ?> /></td>
+						</tr>
 					</table>
 				</div>
 				<!-- Third Party Scripts -->
@@ -547,6 +551,8 @@
 
 		register_setting( 'option-group', 'qr-shortcode-module' );
 		register_setting( 'option-group', 'classic-editor-module' );
+		register_setting( 'option-group', 'classic-widgets-module' );
+		
 
 		if(is_woocommerce_activated()){
 			rocket_woocommerce();

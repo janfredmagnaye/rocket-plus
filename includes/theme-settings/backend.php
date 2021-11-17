@@ -50,6 +50,9 @@ function rocket_after_setup(){
     if ( get_page_by_title( $cookie_page_title ) == NULL ) {
         $cookie_policy_id =  wp_insert_post( $cookie_policy );
     }
+
+    classicEditorMode();
+    classicWidgetsMode();
 }
 // Admin Favicon
 function adminFavicon() {
@@ -74,5 +77,10 @@ add_filter( 'widget_text', 'do_shortcode' );
 function classicEditorMode(){
     if(get_option('classic-editor-module') == "true"){
         add_filter('use_block_editor_for_post','__return_false');
+    }
+}
+function classicWidgetsMode(){
+    if(get_option('classic-widgets-module') == "true"){
+        remove_theme_support( 'widgets-block-editor' );
     }
 }
