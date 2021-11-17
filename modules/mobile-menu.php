@@ -22,7 +22,7 @@
     function rocketMobileMenuShortcode(){
         $button_layout = 
         '<div class="rocket-mobile-button">
-            <button class="hamburger hamburger--collapse" type="button">
+            <button class="hamburger '. get_option('hamburger-class'); .'" type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>

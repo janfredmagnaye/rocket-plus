@@ -257,6 +257,10 @@
 							<td class="w-25"><input type="checkbox" name="rocket-mobile-menu" value="true" <?php if(get_option('rocket-mobile-menu') == "true") echo "checked"; ?> /></td>							
 						</tr>
 						<tr>
+						<td class="w-25">Hamburger Button Class</td>
+							<td class="w-25"><input type="text" name="hamburger-class" value="<?= esc_attr( get_option('hamburger-class') ) ?>" placeholder="hamburger--collapse" /> </td>
+						</tr>
+						<tr>
 						<td class="w-25">Mobile Menu Top Offset</td>
 							<td class="w-25"><input type="text" name="mobile-top-offset" value="<?= esc_attr( get_option('mobile-top-offset') ) ?>" placeholder="30px" /> px </td>
 						</tr>
@@ -483,6 +487,7 @@
 		add_option( 'footer-bgcolor', '#8E8A89' );
 		// add_option( 'header-template', 'left' );
 		add_option( 'footer-template', 'columns' );
+		add_option( 'hamburger-class', 'hamburger--collapse' );
 		add_option( 'mobile-breakpoint', '800' );
 		add_option('copyright', $copyright);
 		add_option('developer', $developer);
@@ -529,6 +534,7 @@
 		register_setting( 'option-group', 'page-bgcolor' );
 		register_setting( 'option-group', 'footer-bgcolor' );
 		register_setting( 'option-group', 'rocket-mobile-menu' );
+		register_setting( 'option-group', 'hamburger-class' );
 		register_setting( 'option-group', 'mobile-breakpoint');
 		register_setting( 'option-group', 'mobile-top-offset');
 		
