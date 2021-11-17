@@ -332,7 +332,9 @@
 
 	//Get Cart Items count shortcode 
 	function rocket_get_cart_items(){
-		return WC()->cart->get_cart_contents_count();
+        if(!is_admin()){
+            return WC()->cart->get_cart_contents_count();
+        }
 	}
 	add_shortcode( 'cart_item_count', 'rocket_get_cart_items' );
 	//[cart_item_count] 
