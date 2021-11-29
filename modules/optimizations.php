@@ -1,7 +1,9 @@
 <?php
 // Stable Optimizations
 function disable_dashicons(){
-    wp_dequeue_style('dashicons' );
+    if(get_option('disable_dashicons')){
+        wp_dequeue_style('dashicons' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'disable_dashicons');
 

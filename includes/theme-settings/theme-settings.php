@@ -400,6 +400,10 @@
 							<td>Enable Inline Height & Width to all images?</td>
 							<td><input type="checkbox" name="rocket_image_optimize" value="true" <?php if(get_option('rocket_image_optimize') == "true") echo "checked"; ?> /></td>
 						</tr>
+						<tr>
+							<td>Disable Dashicons?</td>
+							<td><input type="checkbox" name="disable_dashicons" value="true" <?php if(get_option('disable_dashicons') == "true") echo "checked"; ?> /></td>
+						</tr>
 					</table>
 					<!-- <span>Enable Optimizations: </span>
 					<input type="checkbox" name="rocket_optimizations" value="true" < ?php if(get_option('rocket_optimizations') == "true") echo "checked"; ?> />
