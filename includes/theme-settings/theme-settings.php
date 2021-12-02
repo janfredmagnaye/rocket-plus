@@ -364,7 +364,7 @@
 					<h3> Third Party Scripts</h3>
 					<table class="rckt-table">
 						<tr>
-							<td>After Opening <code>&lt;/head&gt;</code> : </td>
+							<td>After Opening <code>&lt;head&gt;</code> : </td>
 							<td><textarea rows="10" type="text" name="after_opening_head_scripts" value="<?= esc_attr( get_option('after_opening_head_scripts') )?>" ><?= esc_attr( get_option('after_opening_head_scripts') )?></textarea></td>
 						</tr>		
 						<tr>

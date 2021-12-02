@@ -6,9 +6,9 @@
 function rocketStyle(){
 
 		//Font awesome
-		// if(get_option('font_awesome') == "true") { 
-		// 	wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' );
-		// }	
+		if(get_option('font_awesome') == "true") { 
+			wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' );
+		}	
 		//Owl
 		if(get_option('owl') == "true") { 		
 			wp_enqueue_style( 'owl-css', get_template_directory_uri().'/assets/css/owlcarousel/owl.carousel.min.css');
