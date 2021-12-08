@@ -31,7 +31,7 @@ class bs4_column_widget extends WP_Widget {
         // Apply Defaults to variables
         $title     =  apply_filters( 'widget_title', $instance['title'] );
         $class     =  $instance['class'];
-        $content   =  apply_filters('the_content', $instance['content']);
+        $content = (!is_plugin_active( 'elementor/elementor.php' )) ? apply_filters('the_content', $instance['content']) : $instance['content'];
   
         // Front-end rendering
         echo '<div class="'.$class.'">';
