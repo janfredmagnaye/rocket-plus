@@ -1,4 +1,4 @@
-<form class="search-form" action="<?php esc_url( home_url( '/' ) ); ?>" method="get">
+<form class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
 
 	<div class="input-group">
 		<input class="form-control" placeholder="Search for..." name="s" id="search" value="<?php the_search_query(); ?>" required="required" /> 

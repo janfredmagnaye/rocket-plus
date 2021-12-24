@@ -24,6 +24,7 @@ do_action( 'woocommerce_before_account_navigation' );
 ?>
 <div class="row">
 	<div class="col-md-3 woocommerce-My-Account-navigation-wrap">
+		<a class="woocommerce-mobile-navigation-dropdown" href="#">My Account</a>
 		<nav class="woocommerce-My-Account-navigation">
 			<ul>
 				<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>

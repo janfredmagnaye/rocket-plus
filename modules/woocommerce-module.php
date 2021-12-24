@@ -339,4 +339,12 @@
 	add_shortcode( 'cart_item_count', 'rocket_get_cart_items' );
 	//[cart_item_count] 
 
-    
+    //Get Cart Items Count with Items text
+    function get_cart_items_text(){
+        $items = WC()->cart->get_cart_contents_count();
+        if($items>1){
+                return $items.' Items';
+        } else {
+                return $items . ' Item';
+        }
+    }

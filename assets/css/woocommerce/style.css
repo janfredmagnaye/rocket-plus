@@ -31,12 +31,6 @@
     /* Cart Header Visiblity */
     --cart-header: none;
 }
-.woocommerce-info {
-    border-top-color:var(--primary-color);
-}
-.woocommerce-info::before {
-    color: var(--primary-color);
-}
 ul.product_list_widget {
     list-style: none;
     padding-left: 0px;
@@ -304,15 +298,6 @@ p#calc_shipping_state_field span {
 }
 
 /* Checkout Page */
-/* Coupon Form */
-.woocommerce form.checkout_coupon {
-    display: block!important;
-    border: 0px;
-    padding: 0px;
-}
-.woocommerce form.checkout_coupon input#coupon_code {
-    padding: 5px;
-}
 /* Billing Info Form */
 .woocommerce-checkout .woocommerce-billing-fields p#billing_first_name_field, 
 .woocommerce-checkout .woocommerce-billing-fields p#billing_last_name_field
@@ -482,4 +467,81 @@ p#calc_shipping_state_field span {
 /* Address Review */
 .woocommerce .woocommerce-customer-details address {
     border: 1px solid var(--border-color);
+}
+
+/* WC - Account */
+/* Login Toggle */
+#customer_login {
+    position: relative;
+}
+#customer_login .wc-regis-form-wrap {
+    position: absolute;
+    transition: all 0.5s ease;
+}
+#customer_login.login-mode .wc-regis-form-wrap,
+#customer_login.register-mode .wc-login-form-wrap {
+    visibility: hidden;
+    opacity: 0;
+}
+#customer_login .wc-login-form-wrap {
+    transition: all 0.5s ease;
+    margin-bottom: 30px;
+}
+
+/* Login */
+.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login,
+.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-register {
+    max-width: 500px;
+    margin: 40px auto;
+}
+.woocommerce-account .woocommerce h2 {
+    text-align: center;
+}
+.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login label,
+.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login .form-row input.input-text,
+.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login .password-input {
+    display: block;
+    width: 100%;
+}
+.woocommerce-account .woocommerce .woocommerce-form.woocommerce-form-login .form-row input.input-text {
+    padding: 10px;
+}
+.woocommerce-account .woocommerce .woocommerce-form-login .woocommerce-form-login__submit,
+.woocommerce-account .woocommerce .woocommerce-form-login .woocommerce-form-login__submit:hover,
+.woocommerce-account .woocommerce .woocommerce-form-register .woocommerce-form-register__submit,
+.woocommerce-account .woocommerce .woocommerce-form-register .woocommerce-form-register__submit:hover {
+    display: block;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--primary-color);
+}
+.woocommerce-account .woocommerce .woocommerce-form-login p.woocommerce-LostPassword.lost_password {
+    text-align: center;
+}
+/* Reset Password */
+.woocommerce-account .woocommerce form.woocommerce-ResetPassword.lost_reset_password {
+    max-width: 560px;
+    margin: 40px auto;
+}
+.woocommerce-account.woocommerce-lost-password .woocommerce {
+    text-align: center;
+}
+.woocommerce-account .woocommerce form.woocommerce-ResetPassword.lost_reset_password .woocommerce-form-row{
+    width: 100%;
+}
+.woocommerce-account .woocommerce form.woocommerce-ResetPassword.lost_reset_password .form-row input.input-text{
+    padding: 10px;
+}
+.woocommerce-account.woocommerce-lost-password .woocommerce button.button,
+.woocommerce-account.woocommerce-lost-password .woocommerce button.button:hover {
+    display: block;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--primary-color);
 }
