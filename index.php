@@ -15,8 +15,8 @@ get_header(); ?>
 		</header>
 		<?php // Featured Articles Slider
 		if(get_option('featured-articles-slider')){
-			get_template_part('includes/template-parts/posts/content','posts-header');
-		} endif; 
+			include( locate_template( 'includes/template-parts/posts/posts-header.php', false, false ) ); 
+		} 
 		?>
 		<div class="container main_content">
 			<div class="row" role="main">
