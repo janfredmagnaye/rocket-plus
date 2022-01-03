@@ -278,6 +278,10 @@
 							<td class="w-25"><input type="radio" name="header-template" value="right"< ?= ((get_option('header-template') === 'right') ? "checked='checked'" : '') ?>>Right Logo</td>
 						</tr> -->
 						<tr>
+							<td class="w-25">Featured Articles Slider<br><small>Requires a featured tag to be added on posts to enable</small></td>
+							<td class="w-25"><input type="checkbox" name="featured-articles-slider" value="true" <?php if(get_option('featured-articles-slider') == "true") echo "checked"; ?> />
+						</tr>
+						<tr>
 							<td class="w-25">Copyright Footer Template</td>
 							<td class="w-25"><input type="radio" name="footer-template" value="columns"<?= ((get_option('footer-template') === 'columns') ? "checked='checked'" : '') ?>>Default ( 2 columns )</td>
 							<td class="w-25"><input type="radio" name="footer-template" value="center"<?= ((get_option('footer-template') === 'center') ? "checked='checked'" : '') ?>>Center Contents</td>
@@ -548,6 +552,7 @@
 		
 		register_setting( 'option-group', 'header-template' );
 		register_setting( 'option-group', 'footer-template' );
+		register_setting( 'option-group', 'featured-articles-slider' );
 		register_setting( 'option-group', 'scroll-to-top' );
 		register_setting( 'option-group', 'preloader' );
 		register_setting( 'option-group', 'default-banner' );

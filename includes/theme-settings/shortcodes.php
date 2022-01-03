@@ -13,7 +13,7 @@ function rocketShortcodes(){
     add_shortcode( 'placeholder', 'rocketPlaceholder' ); //[placeholder length="30"]
     add_shortcode( 'siteinfo', 'siteInfoShortcode' ); //[siteinfo type=url/name]
     add_shortcode( 'breadcrumbs', 'rocketbreadcrumbsShortCode' ); //[breadcrumbs seperator="&gt;"]
-    
+    add_shortcode( 'featured-articles-slider', 'pull_featured_articles'); //[featured-articles-slider]
 }
 
 //Theme Options Shortcodes
@@ -439,4 +439,26 @@ function rocket_breadcrumbs( $sep ){
     }
     return $breadcrumb_layout;
 
+}
+
+//Pull all featured articles into slider
+function pull_featured_articles( $atts ){
+    $post_count = '7';
+    $tag = 'featured';
+    extract(shortcode_atts(array(
+        'post_count' => $post_count,	
+        'tag' => $tag,			
+    ), $atts));
+
+    $ra_featured_article = '<div class="owl-carousel featured-articles">';
+    $the_query = new WP_Query( array(
+        'post_count' => $post_count,
+        'tag' => $tag
+    )  );
+    while ($the_query -> have_posts()) : $the_query -> the_post(); 
+        include( locate_template( 'includes/template-parts/posts/layout-featured-articles.php', false, false ) ); 
+    endwhile;
+    wp_reset_postdata();
+    $ra_featured_article .= '</div>';
+    return $ra_featured_article;
 }

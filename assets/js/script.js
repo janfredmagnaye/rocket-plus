@@ -2,6 +2,7 @@ $j = jQuery.noConflict();
 
 $j(function(){
 	//mobileMenu();
+	featuredArticlesSlider();
 	menuClick();
 	console.log('Loading Resources............100%');
 
@@ -37,6 +38,36 @@ function menuClick(){
 		console.log(e);
 		$j(this).removeClass('open');
 	});
+}
+function featuredArticlesSlider(){
+	if($j(".featured-articles-slider .featured-articles").length){
+		$j(".featured-articles-slider .featured-articles").owlCarousel({
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: false,
+            responsive: {
+                0 : {
+                    items : 1,
+					nav: true,
+                },
+                480 : {
+                    items : 1,
+                },
+                768 : {
+                    items : 2,
+					
+                },
+				1024: {
+					items : 3,
+				},
+				1280: {
+					nav: false,
+					items : 4,
+				}
+            }
+		});
+	}
 }
 
 $j(window).on('load', function () {

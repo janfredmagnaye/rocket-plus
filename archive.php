@@ -29,6 +29,11 @@ get_header(); ?>
 				?>
 			</h1>
 		</header><!-- .archive-header -->
+		<?php // Featured Articles Slider
+		if(get_option('featured-articles-slider')){
+			get_template_part('includes/template-parts/posts/content','posts-header');
+		} endif; 
+		?>
 		<div class="container">
 			<div class="row" role="main">
 				<div class="col-md-8">
