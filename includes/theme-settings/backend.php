@@ -24,33 +24,6 @@ function fixed_dp_paragraph_tinymce() {
 }
 // Create Privacy & Cookie Policy Pages on install
 function rocket_after_setup(){
-
-    $privacy_policy_contents = get_template_part('/assets/contents/privacy-policy.php');
-    $cookie_policy_contents  = get_template_part('/assets/contents/cookie-policy.php');
-    $privacy_page_title = 'Privacy Policy';
-    $cookie_page_title = 'Cookie Policy';
-    $privacy_policy = array(
-        'post_type'    => 'page',
-        'post_title'    => $privacy_page_title,
-        'post_content'  => $privacy_policy_contents,
-        'post_status'   => 'draft',
-        'post_author'   => 1
-    ); 
-    $cookie_policy = array(
-        'post_type'    => 'page',
-        'post_title'    => $cookie_page_title,
-        'post_content'  => $cookie_policy_contents,
-        'post_status'   => 'draft',
-        'post_author'   => 1
-    ); 
-    // Insert the post into the database
-    if ( get_page_by_title( $privacy_page_title ) == NULL ) {
-        $privacy_policy_id =  wp_insert_post( $privacy_policy );
-    }
-    if ( get_page_by_title( $cookie_page_title ) == NULL ) {
-        $cookie_policy_id =  wp_insert_post( $cookie_policy );
-    }
-
     classicEditorMode();
     classicWidgetsMode();
 }
