@@ -261,9 +261,6 @@
 							<td class="w-25"><input type="text" name="hamburger-class" value="<?= esc_attr( get_option('hamburger-class') ) ?>" placeholder="hamburger--collapse" /> </td>
 						</tr>
 						<tr>
-						<td class="w-25">Mobile Menu Top Offset</td>
-							<td class="w-25"><input type="text" name="mobile-top-offset" value="<?= esc_attr( get_option('mobile-top-offset') ) ?>" placeholder="30px" /> px </td>
-						</tr>
 					</table>
 				</div>
 				
@@ -548,7 +545,6 @@
 		register_setting( 'option-group', 'rocket-mobile-menu' );
 		register_setting( 'option-group', 'hamburger-class' );
 		register_setting( 'option-group', 'mobile-breakpoint');
-		register_setting( 'option-group', 'mobile-top-offset');
 		
 		register_setting( 'option-group', 'header-template' );
 		register_setting( 'option-group', 'footer-template' );
@@ -595,7 +591,7 @@
 				background-color:<?php echo $page; ?>;
 			}
 			div#rocket-mobile-menu {
-				top: <?php echo $mm_offset ?>;
+				top: var(--main-header-height);
 				position: fixed;
     			left: 100%;
 			}

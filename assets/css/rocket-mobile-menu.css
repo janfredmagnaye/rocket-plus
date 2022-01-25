@@ -1,6 +1,6 @@
 div#rocket-mobile-menu {
     width: 100%;
-    height: 100%;
+    height: calc( 100vh - var(--main-header-height) );
     padding: 20px;
     background-color: #fff; /* var(--primary-color) */
     transition: all 0.2s ease;
