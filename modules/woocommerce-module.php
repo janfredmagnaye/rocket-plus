@@ -99,7 +99,7 @@
     }
     /* Add Customer Notes */
     if(get_option('rw_add_notes_cart')){
-        add_action('woocommerce_cart_collaterals', 'order_comments_custom_cart_field');
+        // add_action('woocommerce_after_cart_table', 'order_comments_custom_cart_field');
     }
 
 
@@ -212,26 +212,30 @@
     
 
 		/*  Process the checkout and overwriting the normal button */
-		function woocommerce_button_proceed_to_checkout() {
-			$checkout_url = wc_get_checkout_url();
-			?>
-				<form id="checkout_form" method="POST" action="<?php echo $checkout_url; ?>">
-				<input type="hidden" name="customer_notes" id="customer_notes" value="">
-				<a  href="#" onclick="document.getElementById('customer_notes').value=document.getElementById('customer_notes_text').value;document.getElementById('checkout_form').submit()" class="checkout-button button alt wc-forward">
-				<?php _e( 'Proceed to checkout', 'woocommerce' ); ?></a>
-				</form>
-			<?php
-			}
-			// getting the values in checkout again
-			add_action('woocommerce_checkout_before_customer_details',function(){
-			?>
-			<script>
-				jQuery( document ).ready(function() {
-					jQuery('#order_comments' ).val("<?php echo sanitize_text_field($_POST['customer_notes']); ?>");
-				});
-			</script>
-			<?php 
-			});
+        // if(get_option('rw_add_notes_cart')){
+        //     function woocommerce_button_proceed_to_checkout() {
+        //         $checkout_url = wc_get_checkout_url();
+        //         ? >
+        //             <form id="checkout_form" method="POST" action="<?php echo $checkout_url; ? >">
+        //             <input type="hidden" name="customer_notes" id="customer_notes" value="">
+        //             <a  href="#" onclick="document.getElementById('customer_notes').value=document.getElementById('customer_notes_text').value;document.getElementById('checkout_form').submit()" class="checkout-button button alt wc-forward">
+        //             <?php _e( 'Proceed to checkout', 'woocommerce' ); ? ></a>
+        //             </form>
+        //         <?php
+                
+        //         }
+        // }
+
+		// 	// getting the values in checkout again
+		// 	add_action('woocommerce_checkout_before_customer_details',function(){
+		// 	? >
+		// 	<script>
+		// 		jQuery( document ).ready(function() {
+		// 			jQuery('#order_comments' ).val("<?php echo sanitize_text_field($_POST['customer_notes']); ? >");
+		// 		});
+		// 	</script>
+		// 	<?php 
+		// 	});
 
 	/* Remove Apply Coupon on Cart Page */
     function disable_coupon_field_on_cart( $enabled ) {
@@ -332,9 +336,7 @@
 
 	//Get Cart Items count shortcode 
 	function rocket_get_cart_items(){
-        if(!is_admin()){
-            return WC()->cart->get_cart_contents_count();
-        }
+		return WC()->cart->get_cart_contents_count();
 	}
 	add_shortcode( 'cart_item_count', 'rocket_get_cart_items' );
 	//[cart_item_count] 
@@ -348,3 +350,7 @@
                 return $items . ' Item';
         }
     }
+
+    /* Move Payment on Checkout */
+    remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+    add_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_payment', 20 );
