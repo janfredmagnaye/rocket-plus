@@ -22,7 +22,8 @@ function rocketStyle(){
 		wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css');	
 
 		// Google Font
-		wp_enqueue_style( 'google-font', get_option( 'google-font-import' ) );	
+		wp_register_style( 'google-font', get_option( 'google-font-import' ), array(), null, 'all');	
+		wp_enqueue_style('google-font');
 
 		// Rocket Responsive CSS
 		if(!get_option('mobile-breakpoint')) {
